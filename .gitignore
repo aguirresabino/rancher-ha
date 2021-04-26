@@ -1,0 +1,4 @@
+sensitive.tfvars
+.terraform/
+*.log
+*.tfstate*
