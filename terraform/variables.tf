@@ -1,18 +1,18 @@
 variable "do_token" {
   description = "DigitalOcean Personal Token"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "pvt_key" {
   description = "Terraform use it to log in DigitalOcean droplets"
-  sensitive = true
-  default = "~/.ssh/terraform"
+  sensitive   = true
+  default     = "~/.ssh/terraform"
 }
 
 variable "pub_key" {
   description = "Terraform use it to log in DigitalOcean droplets"
-  sensitive = true
-  default = "~/.ssh/terraform.pub"
+  sensitive   = true
+  default     = "~/.ssh/terraform.pub"
 }
 
 variable "cloudflare_email" {
