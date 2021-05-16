@@ -35,12 +35,20 @@ variable "do_project_environment" {
   default = "Development"
 }
 
+variable "total_rke_nodes" {
+  default = 3
+}
+
 variable "instance_image" {
   default = "ubuntu-20-04-x64"
 }
 
 variable "instance_size" {
   default = "s-8vcpu-16gb"
+}
+
+variable "total_lb_nodes" {
+  default = 1
 }
 
 variable "lb_instance_size" {

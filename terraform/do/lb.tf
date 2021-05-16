@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "lb" {
-    count = 1
+    count = var.total_lb_nodes
     
     image  = var.instance_image
     name   = "lb-node-${count.index + 1}"

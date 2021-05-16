@@ -7,13 +7,11 @@ terraform {
   }
 }
 
-provider "rke" {
-  log_file = "rke_debug.log"
-}
+provider "rke" {}
 
 resource "rke_cluster" "cluster" {
   nodes {
-    node_name   = "rke-node-1"
+    node_name        = "rke-node-1"
     internal_address = module.do_nodes.internal_addresses[0]
     address          = module.do_nodes.addresses[0]
     user             = "root"
@@ -21,7 +19,7 @@ resource "rke_cluster" "cluster" {
     role             = ["controlplane", "etcd", "worker"]
   }
   nodes {
-    node_name   = "rke-node-2"
+    node_name        = "rke-node-2"
     internal_address = module.do_nodes.internal_addresses[1]
     address          = module.do_nodes.addresses[1]
     user             = "root"
@@ -29,28 +27,13 @@ resource "rke_cluster" "cluster" {
     role             = ["controlplane", "etcd", "worker"]
   }
   nodes {
-    node_name   = "rke-node-3"
+    node_name        = "rke-node-3"
     internal_address = module.do_nodes.internal_addresses[2]
     address          = module.do_nodes.addresses[2]
     user             = "root"
     ssh_key          = file(var.pvt_key)
     role             = ["controlplane", "etcd", "worker"]
   }
-
-  # services {
-  #   kube_api {
-  #     extra_args = {
-  #       kubelet-preferred-address-types = "InternalIP,ExternalIP,Hostname"
-  #       feature-gates = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true,LegacyNodeRoleBehavior=false"
-  #     }
-  #   }
-  #   kubelet {
-  #     extra_args = {
-  #       cloud-provider = "none"
-  #       feature-gates = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true"
-  #     }
-  #   }
-  # }
 
   ingress {
     provider = "none"

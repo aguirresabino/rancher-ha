@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "rke_nodes" {
-    count = 3
+    count = var.total_rke_nodes
     
     image  = var.instance_image
     name   = "rke-node-${count.index + 1}"
