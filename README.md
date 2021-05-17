@@ -7,6 +7,11 @@
 
 > Provisioning Rancher in high availability on DigitalOcean.
 
+## Todo
+- [ ] Adds security to the cluster
+- [ ] Use terraform best practices
+- [ ] Use MetalLB and remove instance with Nginx
+
 ## Services / Tools
 
 - Cloudflare
