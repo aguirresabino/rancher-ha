@@ -26,6 +26,10 @@ The purpose of this project is to provision a Kubernetes cluster so that we can 
 
 Rancher is an open source project to facilitate container infrastructure management, whether in any cloud service or on-premise environments.
 
+## Architecture
+
+![Rancher HA](https://i.imgur.com/mUCcOlU.png)
+
 
 ## Install
 
